@@ -1,0 +1,112 @@
+version: "3.5"
+
+services:
+  db:
+    #image: mysql:5.7.34
+    image: mysql:8.0.25
+    env_file:
+      - env.d/development
+    # use legacy authentication plugin to fix: 
+      # django.db.utils.OperationalError: (2059, "Authentication plugin 'caching_sha2_password' 
+      # cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: 
+      # cannot open shared object file: No such file or directory
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./data/db/${RICHIE_SITE:-nau}:/var/lib/mysql
+    # expose database to be connected from host
+    ports:
+      - "127.0.0.1:10001:3306"
+
+
+  app-dev:
+    build:
+      context: .
+      target: development
+      args:
+        DOCKER_USER: ${DOCKER_USER:-1000}
+        SITE: ${RICHIE_SITE:-atkans}
+    image: "${RICHIE_SITE:-atkans}:development"
+    environment:
+      - DJANGO_SETTINGS_MODULE=${RICHIE_SITE:-atkans}.settings
+      - DJANGO_CONFIGURATION=Development
+    env_file: env.d/development
+    networks:
+      - default
+    ports:
+      - "8070:8000"
+    volumes:
+      - "./sites/${RICHIE_SITE:-atkans}/src/backend:/app"
+      - "./data/media/${RICHIE_SITE:-atkans}:/data/media"
+    user: ${DOCKER_USER:-1000}
+    depends_on:
+      - "db"
+  app:
+    build:
+      context: .
+      target: production
+      args:
+        DOCKER_USER: ${DOCKER_USER:-1000}
+        SITE: ${RICHIE_SITE:-atkans}
+    # We tag our images with the current commit sha1 in the CI to make them
+    # unique and avoid collisions in parallel builds.
+    image: "${RICHIE_SITE:-atkans}:production"
+    environment:
+      - DJANGO_SETTINGS_MODULE=${RICHIE_SITE:-atkans}.settings
+      - DJANGO_CONFIGURATION=Production
+      - RICHIE_ES_INDICES_PREFIX=richie_${RICHIE_SITE:-atkans}
+    env_file: env.d/development
+    networks:
+      - default
+    volumes:
+      - ./data/media/${RICHIE_SITE:-atkans}:/data/media
+    user: ${DOCKER_USER:-1000}
+
+  nginx:
+    build:
+      context: .
+      target: nginx
+      args:
+        DOCKER_USER: ${DOCKER_USER:-1000}
+        NGINX_IMAGE_NAME: ${NGINX_IMAGE_NAME:-fundocker/openshift-nginx}
+        NGINX_IMAGE_TAG: ${NGINX_IMAGE_TAG:-1.13}
+        SITE: ${RICHIE_SITE:-atkans}
+    image: "${RICHIE_SITE:-atkans}-nginx:production"
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./docker/files/etc/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./data/media/${RICHIE_SITE:-atkans}:/data/media:ro
+    depends_on:
+      - app
+
+  dockerize:
+    image: jwilder/dockerize
+
+  node:
+    image: circleci/node:14
+    working_dir: /app/src/frontend
+    user: "${DOCKER_USER:-1000}"
+    volumes:
+      - ./sites/${RICHIE_SITE:-atkans}:/app
+     
+  terraform-state:
+    image: hashicorp/terraform:latest
+    env_file: env.d/aws
+    user: "${DOCKER_USER:-1000}"
+    working_dir: /app
+    volumes:
+      - ./aws/create_state_bucket:/app
+    user: ${DOCKER_USER:-1000}
+
+  terraform:
+    image: hashicorp/terraform:0.12.29
+    environment:
+      - TF_VAR_SITE=${RICHIE_SITE:-atkans}
+      - TF_DATA_DIR=/config
+    env_file: env.d/aws
+    user: "${DOCKER_USER:-1000}"
+    working_dir: /app
+    volumes:
+      - ./aws:/app
+      - ./sites/${RICHIE_SITE:-atkans}/aws:/config
+    user: ${DOCKER_USER:-1000}

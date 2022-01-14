@@ -1,0 +1,48 @@
+{
+  "name": "funmooc",
+  "version": "1.11.0",
+  "description": "Richie-powered CMS for fun-mooc.fr",
+  "scripts": {
+    "build-sass-production": "sass scss/_main.scss ../backend/base/static/richie/css/main.css --style=compressed --load-path=node_modules",
+    "build-sass": "sass scss/_main.scss ../backend/base/static/richie/css/main.css --load-path=node_modules",
+    "build-ts-production": "webpack --mode=production --config node_modules/richie-education/webpack.config.js --output-path ../backend/base/static/richie/js/build --env richie-dependent-build --env richie-settings=overrides.json",
+    "build-ts": "webpack --config node_modules/richie-education/webpack.config.js --output-path ../backend/base/static/richie/js/build --env richie-dependent-build --env richie-settings=overrides.json",
+    "compile-translations": "node_modules/richie-education/i18n/compile-translations.js ./i18n/overrides/*.json ./i18n/locales/*.json",
+    "extract-translations": "formatjs extract './**/*.ts*' --ignore ./node_modules --ignore './**/*.d.ts' --out-file './i18n/frontend.json' --id-interpolation-pattern '[sha512:contenthash:base64:6]' --format crowdin",
+    "install-tarteaucitron": "mkdir -p ../backend/base/static/richie/js && cp -R node_modules/tarteaucitronjs ../backend/base/static/richie/js",
+    "lint": "eslint -c node_modules/richie-education/.eslintrc.json 'js/**/*.ts?(x)' --rule 'import/no-extraneous-dependencies: [error, {packageDir: ['.', './node_modules/richie-education']}]' --no-error-on-unmatched-pattern",
+    "postinstall": "yarn install-tarteaucitron",
+    "prettier-write": "prettier --write '**/*.+(css|scss)'",
+    "prettier": "prettier '**/*.+(css|scss)'",
+    "watch-sass": "nodemon -e scss -x 'yarn build-sass'",
+    "watch-ts": "yarn build-ts --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openfun/richie-site-factory.git"
+  },
+  "keywords": [
+    "MOOC",
+    "CMS"
+  ],
+  "author": {
+    "name": "Open FUN (France Université Numérique)",
+    "email": "fun.dev@fun-mooc.fr"
+  },
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/openfun/richie-site-factory/issues"
+  },
+  "homepage": "https://github.com/openfun/richie-site-factory#readme",
+  "dependencies": {
+    "richie-education": "2.9.1",
+    "tarteaucitronjs": "1.9.4"
+  },
+  "devDependencies": {
+    "@formatjs/cli": "4.3.1",
+    "eslint": "7.32.0",
+    "nodemon": "2.0.13",
+    "prettier": "2.4.1",
+    "sass": "1.42.1"
+  }
+}

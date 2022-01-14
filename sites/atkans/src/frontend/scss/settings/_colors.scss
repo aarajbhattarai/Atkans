@@ -1,0 +1,630 @@
+$palette: (
+  "black": #000000,
+  "black-two": #232323,
+  "dark": #29303b,
+  "brownish-grey": #686868,
+  "battleship-grey": #686f7a,
+  "purplish-grey": #726c74,
+  "light-grey": #d2d2d2,
+  "silver": #d5dbe0,
+  "pale-grey": #eceff1,
+  "white-three": #fdfdfd,
+  "white": #fdfeff,
+  "turquoise-blue": #0498be,
+  "mediumturquoise": #becde1,
+  "robin-egg-blue": #4fd0e7,
+  "light-blue": #70B9F3,
+  "medium-blue": #82AEF8,
+  "navy-blue": #001f50,
+  "atenio-blue": #003A6B,
+  "leaf": #4E9FE7,
+  "nepaleaf": #2bd478,
+  "light-yellow": #f1f28b,
+);
+
+// Named gradients
+// ---------
+$neutral-gradient: linear-gradient(
+  to top,
+  r-color("silver") 0,
+  r-color("white-three") 13rem,
+  r-color("white") 14rem,
+  r-color("white")
+);
+$light-gradient: linear-gradient(
+  79deg,
+  r-color("robin-egg-blue") 0%,
+  r-color("robin-egg-blue") 10%,
+  r-color("turquoise-blue") 56%
+);
+$middle-gradient: linear-gradient(
+  271deg,
+  r-color("turquoise-blue") 0%,
+  r-color("light-blue") 59%,
+  r-color("medium-blue") 99%
+);
+$dark-gradient: linear-gradient(
+  295deg,
+  r-color("medium-blue") 1%,
+  r-color("light-blue") 96%
+);
+$white-mask-gradient: (
+  linear-gradient(
+    to right,
+    r-color("white") 0%,
+    rgba(r-color("white"), 0.85) 15%,
+    rgba(r-color("white"), 0.15) 60%,
+    rgba(r-color("white"), 0) 70%
+  ),
+  linear-gradient(
+    to left,
+    r-color("white") 0%,
+    rgba(r-color("white"), 0.85) 15%,
+    rgba(r-color("white"), 0.15) 60%,
+    rgba(r-color("white"), 0) 70%
+  )
+);
+
+// Basic color schemes
+// ---------
+$leaf-scheme: (
+  font-color: r-color("white"),
+  link-color: r-color("white"),
+  svg-color: r-color("white"),
+  background: r-color("leaf"),
+  hover-font-color: r-color("white"),
+  hover-background: scale-color(r-color("leaf"), $lightness: -10%),
+);
+$subheader-scheme: (
+  font-color: r-color("nepaleaf"),
+  link-color: r-color("white"),
+  svg-color: r-color("white"),
+  background: r-color("white"),
+  hover-font-color: r-color("white"),
+  hover-background: scale-color(r-color("leaf"), $lightness: -10%),
+);
+
+$nepaleaf-scheme: (
+  font-color: r-color("white"),
+  link-color: r-color("light-grey"),
+  svg-color: r-color("white"),
+  background: r-color("nepaleaf"),
+  hover-font-color: r-color("white"),
+  hover-background: r-color("firebrick6"),
+);
+
+$medium-blue-scheme: (
+  font-color: r-color("white"),
+  link-color: r-color("light-grey"),
+  svg-color: r-color("white"),
+  background: r-color("medium-blue"),
+  hover-font-color: r-color("white"),
+  hover-background: scale-color(r-color("medium-blue"), $lightness: -10%),
+);
+$light-blue-scheme: (
+  font-color: r-color("white"),
+  link-color: r-color("leaf"),
+  svg-color: r-color("white"),
+  background: r-color("light-blue"),
+  hover-font-color: r-color("white"),
+  hover-background: scale-color(r-color("light-blue"), $lightness: -10%),
+);
+$mediumturquoise-scheme: (
+  font-color: r-color("light-blue"),
+  svg-color: r-color("light-blue"),
+  background: r-color("mediumturquoise"),
+  hover-font-color: r-color("light-blue"),
+  hover-background: lighten(r-color("mediumturquoise"), 8%),
+);
+$white-scheme: (
+  font-color: r-color("black"),
+  h1-color: r-color("black-two"),
+  h2-color: r-color("black-two"),
+  svg-color: r-color("black"),
+  background: r-color("white"),
+  hover-font-color: r-color("leaf"),
+  hover-background: darken(r-color("white"), 8%),
+);
+$light-scheme: (
+  font-color: r-color("black"),
+  h1-color: r-color("black-two"),
+  h2-color: r-color("black-two"),
+  svg-color: r-color("black"),
+  background: r-color("light-grey"),
+  hover-font-color: r-color("leaf"),
+  hover-background: r-color("battleship-grey"),
+);
+$lightest-scheme: (
+  font-color: r-color("black"),
+  h1-color: r-color("black-two"),
+  h2-color: r-color("black-two"),
+  svg-color: r-color("black"),
+  background: r-color("pale-grey"),
+  hover-font-color: r-color("leaf"),
+  hover-background: r-color("battleship-grey"),
+);
+$clouds-scheme: (
+  background: bottom left / 100% 70% no-repeat r-color("smoke")
+    url("../../richie/images/components/clouds.jpg"),
+);
+$transparent-clear-scheme: (
+  font-color: r-color("white"),
+  svg-color: r-color("white"),
+  background: transparent,
+  border-color: r-color("white"),
+  hover-font-color: r-color("white"),
+  hover-svg-color: r-color("white"),
+  hover-background: rgba(r-color("white"), 0.3),
+);
+$transparent-darkest-scheme: (
+  font-color: r-color("black"),
+  h1-color: r-color("black-two"),
+  h2-color: r-color("black-two"),
+  svg-color: r-color("black"),
+  background: transparent,
+  border-color: r-color("black"),
+  hover-font-color: r-color("leaf"),
+  hover-svg-color: r-color("leaf"),
+  hover-border-color: r-color("leaf"),
+);
+$neutral-gradient-scheme: (
+  font-color: r-color("black-two"),
+  svg-color: r-color("black-two"),
+  background: $neutral-gradient,
+);
+$light-gradient-scheme: (
+  font-color: r-color("navy-blue"),
+  svg-color: r-color("navy-blue"),
+  background: $light-gradient,
+);
+$middle-gradient-scheme: (
+  font-color: r-color("white"),
+  svg-color: r-color("white"),
+  background: $middle-gradient,
+  hover-font-color: r-color("white"),
+);
+$dark-gradient-scheme: (
+  font-color: r-color("white"),
+  svg-color: r-color("white"),
+  background: $dark-gradient,
+  hover-font-color: r-color("white"),
+);
+$white-mask-gradient-scheme: (
+  font-color: r-color("black"),
+  h1-color: r-color("black"),
+  h2-color: r-color("black"),
+  svg-color: r-color("black"),
+  background: $white-mask-gradient,
+  hover-font-color: r-color("leaf"),
+);
+$clear-red-scheme: (
+  font-color: r-color("leaf"),
+  h1-color: r-color("leaf"),
+  h2-color: r-color("leaf"),
+  svg-color: r-color("leaf"),
+  background: r-color("white"),
+  hover-font-color: r-color("leaf"),
+);
+
+// Theme schemes
+$r-theme: (
+  banner: (
+    error: $leaf-scheme,
+    warning: $nepaleaf-scheme,
+    success: $lightest-scheme,
+    info: $light-scheme,
+  ),
+  base-schemes: (
+    primary: $leaf-scheme,
+    secondary: $light-blue-scheme,
+    tertiary: $medium-blue-scheme,
+    clear: $white-scheme,
+    light: $light-scheme,
+    lightest: $lightest-scheme,
+    nepaleaf: $nepaleaf-scheme,
+    clear-red: $clear-red-scheme,
+    neutral-gradient: $neutral-gradient-scheme,
+    light-gradient: $light-gradient-scheme,
+    middle-gradient: $middle-gradient-scheme,
+    dark-gradient: $dark-gradient-scheme,
+    white-mask-gradient: $white-mask-gradient-scheme,
+    clouds: $clouds-scheme,
+    transparent-clear: $transparent-clear-scheme,
+    transparent-darkest: $transparent-darkest-scheme,
+  ),
+  base-gradients: (
+    neutral-gradient: $neutral-gradient,
+    light-gradient: $light-gradient,
+    middle-gradient: $middle-gradient,
+    dark-gradient: $dark-gradient,
+    white-mask-gradient: $white-mask-gradient,
+  ),
+  cookie-consent: (
+    base-background: r-color("medium-blue"),
+    cta-allow: r-color("nepa-leaf"),
+    cta-deny: r-color("light-blue"),
+    light-color: r-color("white"),
+    dark-color: r-color("dark"),
+  ),
+  topbar: (
+    base-background: r-color("medium-blue"),
+    over-background: null,
+    over-border: null,
+    hamburger-color: r-color("white"),
+    item-color: r-color("white"),
+    item-hover-color: r-color("atenio-blue"),
+    item-active-color: r-color("atenio-blue"),
+    item-cta-color: r-color("white"),
+    item-cta-background: r-color("leaf"),
+    item-cta-border: r-color("leaf"),
+    item-cta-hollow-color: r-color("black-two"),
+    item-cta-hollow-background: transparent,
+    item-cta-hollow-border: transparent,
+    item-divider-border: r-color("light-grey"),
+  ),
+  body-content: (
+    base-color: r-color("black"),
+    base-background: r-color("white"),
+    insert-background-image: url("../../richie/images/components/wave-dark.svg"),
+    base-link-color: r-color("leaf"),
+  ),
+  body-footer: (
+    base-color: r-color("white"),
+    base-background: r-color("medium-blue"),
+    lang-color: r-color("white"),
+    section-hover: r-color("white"),
+    subtitle-color: r-color("white"),
+    badge-button: $nepaleaf-scheme,
+  ),
+  
+  body-mentions: (
+    base-color: r-color("white"),
+    base-background: r-color("medium-blue"),
+    copyright-hover: r-color("black"),
+  ),
+  subheader: (
+    base: $light-blue-scheme,
+    container: $subheader-scheme,
+    cta: $light-blue-scheme,
+    media-background: r-color("white"),
+    teaser-border: rgba(r-color("white"), 0.3),
+    search-input-color: r-color("white"),
+    search-input-background: transparent,
+    search-input-border: r-color("white"),
+    search-input-placeholder: r-color("white"),
+    social-network-badges: $transparent-clear-scheme,
+    category-badge: $nepaleaf-scheme,
+  ),
+  subheader-alt: (
+    container-background: $dark-gradient,
+    container-border: null,
+    background-image: url("../../richie/images/components/wave-white.svg"),
+  ),
+  block-schemes: (
+    empty-color: r-color("brownish-grey"),
+    divider: r-color("pale-grey"),
+    variants: (
+      clear: $light-scheme,
+      light: $middle-gradient-scheme,
+      lightest: $lightest-scheme,
+      gradient-neutral: $neutral-gradient-scheme,
+      gradient-dark: $dark-gradient-scheme,
+      quinary: $light-gradient-scheme,
+    ),
+    alt-arc: url("../../richie/images/components/arc-white.svg"),
+    alt-curve: url("../../richie/images/components/curve-white.svg"),
+    alt-wave: url("../../richie/images/components/wave-white.svg"),
+  ),
+  accordion-plan: (
+    item-dot-color: r-color("black"),
+    title-color: r-color("leaf"),
+    content-color: r-color("brownish-grey"),
+    border-color: r-color("light-grey"),
+    background-color: null,
+    dot-closed: url("../../richie/images/components/add-outline.svg"),
+    dot-opened: url("../../richie/images/components/minus-outline.svg"),
+  ),
+  large-banner: (
+    base-background-color: r-color("black-two"),
+    base-color: r-color("white"),
+    base-shadow: r-color("black-two"),
+  ),
+  hero-intro: (
+    insert-background-image:
+      url("../../richie/images/components/wave-white.svg"),
+    inner-background: $white-mask-gradient,
+    title-color: r-color("leaf"),
+    title-alt-color: r-color("black-two"),
+    content-color: r-color("white"),
+    search-input-background: r-color("white"),
+    search-btn-background: r-color("leaf"),
+    search-icon-fill: r-color("white"),
+    cta-variant-from: r-color("leaf"),
+    cta-variant-to: scale-color(r-color("leaf"), $lightness: -10%),
+    cta-color: r-color("white"),
+    cta-border: r-color("leaf"),
+  ),
+  section-plugin: (
+    title-emphased-color: r-color("leaf"),
+  ),
+  licence-plugin: (
+    content-color: r-color("brownish-grey"),
+    description-color: r-color("brownish-grey"),
+  ),
+  blogpost-glimpse: (
+    card-background: r-color("white"),
+    title-color: r-color("black"),
+    title-hover-color: r-color("nepaleaf"),
+    theme-border: r-color("nepaleaf"),
+    content-color: r-color("brownish-grey"),
+    content-hover-color: r-color("black"),
+    media-background: r-color("light-grey"),
+    date-color: r-color("brownish-grey"),
+    date-hover-color: r-color("leaf"),
+    empty-color: r-color("black-two"),
+  ),
+  blogpost-glimpse-mini: (
+    border: r-color("light-grey"),
+  ),
+  blogpost-glimpse-favorite: (
+    content-color: inherit,
+    title-color: inherit,
+    excerpt-color: r-color("brownish-grey"),
+    cta: $leaf-scheme,
+    cta-hover: $leaf-scheme,
+  ),
+  button-caesura: (
+    base: $nepaleaf-scheme,
+    alternative: $clear-red-scheme,
+    base-hover: $leaf-scheme,
+  ),
+  badge-glimpse: (
+    base-background: r-color("white"),
+    title-color: r-color("black"),
+    content-color: r-color("brownish-grey"),
+  ),
+  card-glimpse: (
+    base-background: r-color("white"),
+    divider-color: r-color("leaf"),
+    title-color: r-color("black") !important ,
+    content-color: r-color("brownish-grey") !important,
+  ),
+  category-glimpse-badges: (
+    base-border: r-color("light-grey"),
+    tag: $leaf-scheme,
+  ),
+  category-glimpse: (
+    base-border: rgba(r-color("black"), 0.125),
+    base-hover-border: r-color("leaf"),
+    base-hover-color: r-color("leaf"),
+    base-background: r-color("white"),
+    body-color: r-color("black"),
+    title-color: inherit,
+    title-hover-color: r-color("leaf"),
+    logo-empty-background: r-color("white-three"),
+  ),
+  course-glimpse-list: (
+    count-color: r-color("brownish-grey"),
+  ),
+  course-glimpse: (
+    card-background: r-color("white"),
+    base-shadow: 0 0 6px r-color("light-grey"),
+    base-hover-shadow: 0 0 6px r-color("battleship-grey"),
+    cta-background: r-color("leaf"),
+    empty-color: r-color("brownish-grey"),
+    icon-shadow: (
+      0 10px 50px 0 rgba(r-color("black"), 0.05),
+      0 12px 34px 0 rgba(r-color("black"), 0.15),
+    ),
+    icon: $leaf-scheme,
+    content-color: r-color("brownish-grey"),
+    title-color: r-color("black"),
+    organization-color: r-color("leaf"),
+    organization-media-empty-background: r-color("white-three"),
+    svg-icon-fill: r-color("white"),
+    footer: $leaf-scheme,
+  ),
+  category-badges: (
+    primary-item: $leaf-scheme,
+    secondary-item: $light-blue-scheme,
+    tertiary-item: $mediumturquoise-scheme,
+  ),
+  category-tags: (
+    primary-item: $nepaleaf-scheme,
+    secondary-item: $light-blue-scheme,
+    tertiary-item: $mediumturquoise-scheme,
+  ),
+  characteristics: (
+    primary-item: $leaf-scheme,
+    secondary-item: $light-blue-scheme,
+    tertiary-item: $mediumturquoise-scheme,
+  ),
+  organization-glimpse-list: (
+    empty-color: r-color("brownish-grey"),
+    empty-background: transparent,
+  ),
+  organization-glimpse: (
+    base-background: r-color("white"),
+    base-border: r-color("light-grey"),
+    logo-empty-background: r-color("white-three"),
+    link-border: r-color("leaf"),
+  ),
+  organization-glimpse-row: (
+    base-background: r-color("white"),
+    divider: r-color("light-grey"),
+    hover-background: darken(r-color("white"), 2%),
+    hover-title-color: r-color("leaf"),
+  ),
+  pagination: (
+    item-color: r-color("brownish-grey"),
+    item-background: r-color("white"),
+    item-border: r-color("light-grey"),
+    current-color: r-color("white"),
+    current-background: r-color("leaf"),
+  ),
+  person-glimpse: (
+    card-background: r-color("white"),
+    base-shadow: 0 1px 2px rgba(r-color("battleship-grey"), 0.4),
+    title-color: r-color("leaf"),
+    empty-background: r-color("white-three"),
+    category: $leaf-scheme,
+    category-title: transparent,
+    bio-color: r-color("brownish-grey"),
+  ),
+  program-glimpse: (
+    card-background: r-color("white"),
+    card-border: null,
+    card-hover-border: null,
+    content-color: r-color("brownish-grey"),
+    title-color: r-color("light-blue"),
+    media-decoration: url("../../richie/images/components/arc-white.svg"),
+    empty-background: r-color("white-three"),
+    footer: $leaf-scheme,
+    base-shadow: 0 0 6px r-color("light-grey"),
+    base-hover-shadow: 0 0 6px r-color("battleship-grey"),
+  ),
+  program-glimpse-empty: (
+    card-color: r-color("brownish-grey"),
+    hover-border: r-color("light-grey"),
+  ),
+  quote-glimpse: (
+    base-background: r-color("white"),
+    base-shadow: 0 0 4px r-color("light-grey"),
+    title-color: r-color("black"),
+    content-color: r-color("purplish-grey"),
+    icon-color: r-color("dark"),
+  ),
+  row_half-glimpse: (
+    base-background: r-color("white"),
+    divider-color: r-color("leaf"),
+    title-color: r-color("black") !important,
+    content-color: r-color("brownish-grey") !important,
+  ),
+  row_full-glimpse: (
+    base-background: r-color("white"),
+    divider-color: r-color("leaf"),
+    title-color: r-color("black") !important,
+    content-color: r-color("brownish-grey") !important,
+  ),
+  base-search: (
+    input-background: transparent,
+    icon-fill: r-color("brownish-grey"),
+    input-border: r-color("light-grey"),
+  ),
+  social-network-badges: (
+    base: $leaf-scheme,
+  ),
+  blogpost-detail: (
+    aside-glimpse-title-color: r-color("light-blue"),
+    aside-glimpse-title-background: r-color("white"),
+    aside-glimpse-title-border: r-color("light-blue"),
+    categories: $leaf-scheme,
+    categories-tag-background: transparent,
+    top-border: r-color("light-grey"),
+    theme-border: r-color("leaf"),
+    pubdate-border: r-color("leaf"),
+    authors-border: r-color("leaf"),
+    cover-empty-background: r-color("white-three"),
+    body-color: r-color("dark"),
+    headline-color: r-color("brownish-grey"),
+    headline-border: r-color("black-two"),
+    headline-title-color: r-color("black-two"),
+    social-network-badges: $nepaleaf-scheme,
+  ),
+  category-detail: (
+    empty-background: r-color("white-three"),
+    insert-background-image:
+      url("../../richie/images/components/wave-white.svg"),
+    logo-background: r-color("white"),
+    logo-border: r-color("light-grey"),
+    logo-shadow: 0 0.25rem 1.5625rem r-color("brownish-grey"),
+    intro-title-color: r-color("leaf"),
+    description-color: r-color("brownish-grey"),
+  ),
+  course-detail: (
+    organizations-title-color: r-color("brownish-grey"),
+    aside-title-border: r-color("black-two"),
+    primary-group-title-color: r-color("black-two"),
+    primary-group-background: transparent,
+    primary-group-arc: null,
+    run-cta: $leaf-scheme,
+    run-descriptions-divider: r-color("light-grey"),
+    plan-title-color: r-color("leaf"),
+    license-label-color: r-color("light-blue"),
+    checkmark-list-decoration:
+      url("../../richie/images/components/checkmark.svg"),
+  ),
+  organization-detail: (
+    banner-empty-background: r-color("white-three"),
+    insert-background-image:
+      url("../../richie/images/components/wave-white.svg"),
+    logo-border: r-color("light-grey"),
+    logo-shadow: 0 0.25rem 1.5625rem r-color("brownish-grey"),
+    intro-title: r-color("leaf"),
+    categories: $leaf-scheme,
+    description-color: r-color("brownish-grey"),
+  ),
+  program-detail: (
+    cover-empty-background: r-color("white-three"),
+  ),
+  search-results: (
+    overlay: r-color("black"),
+    color: r-color("light-grey"),
+  ),
+  search-filters: (
+    base-background: r-color("white"),
+    toggler-background: r-color("pale-grey"),
+    toggler-shadow: 0 0 0.2rem r-color("brownish-grey"),
+    toggler-fill: r-color("brownish-grey"),
+  ),
+  search-filters-pane: (
+    title-color: r-color("black"),
+    clearer-hover-color: r-color("leaf"),
+  ),
+  search-filters-group: (
+    title-color: r-color("battleship-grey"),
+    modal-overlay-background: r-color("white"),
+  ),
+  search-filters-group-modal: (
+    base-color: r-color("brownish-grey"),
+    base-background: r-color("white"),
+    base-border: r-color("brownish-grey"),
+    input-color: r-color("black"),
+    input-background: r-color("light-grey"),
+    item-border: r-color("light-grey"),
+    close-color: r-color("black"),
+    close-border: r-color("light-grey"),
+    close-background: r-color("white"),
+    button-color: r-color("white"),
+    button-background: r-color("leaf"),
+    overlay-background: r-color("white"),
+  ),
+  search-filters-value: (
+    base-color: r-color("brownish-grey"),
+    base-border: r-color("light-grey"),
+    hover-color: r-color("leaf"),
+    hover-border: r-color("light-grey"),
+    active-color: r-color("black"),
+    count-color: r-color("brownish-grey"),
+    count-background: r-color("white"),
+  ),
+  search-filters-value-parent: (
+    unfold-color: r-color("black"),
+  ),
+  styleguide: (
+    grid-line-color: lighten(r-color("silver"), 5%),
+    grid-border-color: r-color("silver"),
+    cta-sample: $light-blue-scheme,
+    spot-sample: $leaf-scheme,
+  ),
+  selector: (
+    base-background: r-color("white"),
+    hover-background: r-color("white"),
+    base-color: r-color("dark"),
+    hover-color: r-color("dark"),
+    base-border: r-color("light-grey"),
+  ),
+  spinner: (
+    base-color: r-color("light-blue"),
+  ),
+);
