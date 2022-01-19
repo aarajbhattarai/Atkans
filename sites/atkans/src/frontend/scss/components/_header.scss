@@ -1,13 +1,14 @@
 // Main body header
 .topbar {
   $topbar-selector: &;
-  padding: 0.3rem 0;
+  padding: 0.rem 0;
   position: relative;
   z-index: 200;
   background: r-theme-val(topbar, base-background);
 
   @include media-breakpoint-up($r-topbar-breakpoint) {
     height: $r-topbar-height;
+    padding: 0.3rem 0;
 
     &--over {
       position: absolute;

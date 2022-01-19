@@ -20,6 +20,7 @@ COPY ./sites/${SITE}/src/frontend /builder/src/frontend
 WORKDIR /builder/src/frontend
 
 RUN yarn install --frozen-lockfile && \
+    yarn compile-translations && \
     yarn build-ts-production && \
     yarn build-sass-production
 
@@ -38,7 +39,7 @@ RUN pip install --upgrade pip
 
 RUN mkdir /install && \
     pip install --prefix=/install -r requirements.txt \
-    # Use temporarily a forked version of django-cms and djangocms-admin-style
+    # Use temporarily a forked version of django-cms and djangocms-admin-style
     # The django-cms fork includes drillable search feature,
     # it should be removed when this feature will be officialy released.
     # djangocms-admin-style should be removed when 2.0.3 will be released

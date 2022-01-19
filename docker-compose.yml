@@ -2,21 +2,15 @@ version: "3.5"
 
 services:
   db:
-    #image: mysql:5.7.34
-    image: mysql:8.0.25
+    image: postgres:9.6
+    environment:
+      - POSTGRES_DB=richie_${RICHIE_SITE:-atkans}
     env_file:
-      - env.d/development
-    # use legacy authentication plugin to fix: 
-      # django.db.utils.OperationalError: (2059, "Authentication plugin 'caching_sha2_password' 
-      # cannot be loaded: /usr/lib/x86_64-linux-gnu/mariadb18/plugin/caching_sha2_password.so: 
-      # cannot open shared object file: No such file or directory
-    command: --default-authentication-plugin=mysql_native_password
-    volumes:
-      - ./data/db/${RICHIE_SITE:-nau}:/var/lib/mysql
-    # expose database to be connected from host
+      - "env.d/development"
     ports:
-      - "127.0.0.1:10001:3306"
-
+      - "5440:5432"
+    volumes:
+      - ./data/db/${RICHIE_SITE:-atkans}:/var/lib/postgresql/data
 
   app-dev:
     build:
@@ -27,8 +21,10 @@ services:
         SITE: ${RICHIE_SITE:-atkans}
     image: "${RICHIE_SITE:-atkans}:development"
     environment:
+      - DB_NAME=richie_${RICHIE_SITE:-atkans}
       - DJANGO_SETTINGS_MODULE=${RICHIE_SITE:-atkans}.settings
       - DJANGO_CONFIGURATION=Development
+      - RICHIE_ES_INDICES_PREFIX=richie_${RICHIE_SITE:-atkans}
     env_file: env.d/development
     networks:
       - default
@@ -37,9 +33,10 @@ services:
     volumes:
       - "./sites/${RICHIE_SITE:-atkans}/src/backend:/app"
       - "./data/media/${RICHIE_SITE:-atkans}:/data/media"
-    user: ${DOCKER_USER:-1000}
     depends_on:
       - "db"
+    user: ${DOCKER_USER:-1000}
+
   app:
     build:
       context: .
@@ -51,6 +48,7 @@ services:
     # unique and avoid collisions in parallel builds.
     image: "${RICHIE_SITE:-atkans}:production"
     environment:
+      - DB_NAME=richie_${RICHIE_SITE:-atkans}
       - DJANGO_SETTINGS_MODULE=${RICHIE_SITE:-atkans}.settings
       - DJANGO_CONFIGURATION=Production
       - RICHIE_ES_INDICES_PREFIX=richie_${RICHIE_SITE:-atkans}
@@ -59,6 +57,8 @@ services:
       - default
     volumes:
       - ./data/media/${RICHIE_SITE:-atkans}:/data/media
+    depends_on:
+      - "db"
     user: ${DOCKER_USER:-1000}
 
   nginx:
@@ -88,7 +88,7 @@ services:
     user: "${DOCKER_USER:-1000}"
     volumes:
       - ./sites/${RICHIE_SITE:-atkans}:/app
-     
+
   terraform-state:
     image: hashicorp/terraform:latest
     env_file: env.d/aws

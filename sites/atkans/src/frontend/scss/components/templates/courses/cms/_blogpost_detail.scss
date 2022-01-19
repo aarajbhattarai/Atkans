@@ -180,6 +180,7 @@
 
     .person-plugin-tag {
       color: inherit;
+      font-family: $r-font-family-fuzzy;
     }
 
     @if r-theme-val(blogpost-detail, authors-border) {
