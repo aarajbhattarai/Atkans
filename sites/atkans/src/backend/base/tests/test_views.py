@@ -1,4 +1,4 @@
-"""Test fun-mooc views."""
+"""Test Atkans views."""
 from django.test import TestCase
 
 from lxml import etree  # nosec

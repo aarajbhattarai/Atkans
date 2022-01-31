@@ -19,44 +19,22 @@
 {% with category=current_page.category header_level=2 %}
 {% if category %}
     <div class="category-detail">
-        <div class="category-detail__block category-detail__block--unpadded">
-            <div class="category-detail__row category-detail__row--unpadded">
-                <div class="category-detail__banner">
-                    {% get_placeholder_plugins "banner" as banner_plugins or %}
-                        <div class="category-detail__empty">{% trans "Hi, Something intresting is coming soon!" %}</div>
-                    {% endget_placeholder_plugins %}
-                    {% blockplugin banner_plugins.0 %}
-                        <img
-                            src="{% thumbnail instance.picture 1140x400 crop upscale subject_location=instance.picture.subject_location %}"
-                            srcset="
-                                {% thumbnail instance.picture 1140x400 crop upscale subject_location=instance.picture.subject_location %} 1140w
-                                {% if instance.picture.width >= 2280 %},{% thumbnail instance.picture 2280x800 crop upscale subject_location=instance.picture.subject_location %} 2280w{% endif %}
-                                {% if instance.picture.width >= 3420 %},{% thumbnail instance.picture 3420x600 crop upscale subject_location=instance.picture.subject_location %} 3420w{% endif %}
-                            "
-                            sizes="1140px"
-                            alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'category banner' %}{% endif %}"
-                        />
-                    {% endblockplugin %}
-                </div>
-
-                <div class="category-detail__logo">
-                    {% get_placeholder_plugins "logo" as logo_plugins or %}
-                        <div class="category-detail__empty">{% trans "Logo" %}</div>
-                    {% endget_placeholder_plugins %}
-                    {% blockplugin logo_plugins.0 %}
-                        <img
-                            src="{% thumbnail instance.picture 200x200 crop upscale subject_location=instance.picture.subject_location %}"
-                            srcset="
-                                {% thumbnail instance.picture 200x200 crop upscale subject_location=instance.picture.subject_location %} 200w
-                                {% if instance.picture.width >= 400 %},{% thumbnail instance.picture 400x400 crop upscale subject_location=instance.picture.subject_location %} 400w{% endif %}
-                                {% if instance.picture.width >= 600 %},{% thumbnail instance.picture 600x600 crop upscale subject_location=instance.picture.subject_location %} 600w{% endif %}
-                            "
-                            sizes="200px"
-                            alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'category logo' %}{% endif %}"
-                        />
-                    {% endblockplugin %}
-                </div>
-            </div>
+        <div class="category-detail__banner">
+            {% get_placeholder_plugins "banner" as banner_plugins or %}
+                <div class="category-detail__empty">{% trans "Hi, Something intresting is coming soon!" %}</div>
+            {% endget_placeholder_plugins %}
+            {% blockplugin banner_plugins.0 %}
+                <img
+                    src="{% thumbnail instance.picture 1140x400 crop upscale subject_location=instance.picture.subject_location %}"
+                    srcset="
+                        {% thumbnail instance.picture 1140x400 crop upscale subject_location=instance.picture.subject_location %} 1140w
+                        {% if instance.picture.width >= 2280 %},{% thumbnail instance.picture 2280x800 crop upscale subject_location=instance.picture.subject_location %} 2280w{% endif %}
+                        {% if instance.picture.width >= 3420 %},{% thumbnail instance.picture 3420x600 crop upscale subject_location=instance.picture.subject_location %} 3420w{% endif %}
+                    "
+                    sizes="1140px"
+                    alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'Atkans' %}{% endif %}"
+                />
+            {% endblockplugin %}
         </div>
 
         <div class="category-detail__intro category-detail__block category-detail__block--unpadded">
@@ -72,7 +50,7 @@
                                 {% if instance.picture.width >= 180 %},{% thumbnail instance.picture 180x180 crop upscale subject_location=instance.picture.subject_location %} 120w{% endif %}
                             "
                             sizes="60px"
-                            alt=""
+                            alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'Atkans' %}{% endif %}"
                         />
                     {% endblockplugin %}
 

@@ -1,4 +1,4 @@
-"""Test fun-mooc views."""
+"""Test Atkans views."""
 import random
 from datetime import timedelta
 

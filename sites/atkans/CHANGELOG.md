@@ -307,7 +307,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Add translations for strings specific to fun-mooc
+- Add translations for strings specific to Atkans
 
 ### Changed
 
@@ -345,7 +345,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
   override settings.
 - Update project settings to add styleguide and missing new settings.
 - Update project urls to add styleguide.
-- Update layout color theme and logo to fit fun-mooc mockups.
+- Update layout color theme and logo to fit Atkans mockups.
 
 ## [0.8.0] - 2019-12-15
 
@@ -425,7 +425,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Add a gimporter app to automatically transfer existing content on fun-mooc.fr
+- Add a gimporter app to automatically transfer existing content on Atkans.fr
 - Automate backend code assessment with a classical python toolkit (flake8,
   isort, black, pylint, bandit)
 
@@ -473,7 +473,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Design a Richie-based project for the future fun-mooc.fr front end
+- Design a Richie-based project for the future Atkans.fr front end
 - Static and media files are stored in AWS S3 buckets and distributed _via_
   Amazon CloudFront
 

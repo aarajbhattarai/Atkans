@@ -1,7 +1,7 @@
 {
   "name": "funmooc",
   "version": "1.11.0",
-  "description": "Richie-powered CMS for fun-mooc.fr",
+  "description": "Richie-powered CMS for Atkans.fr",
   "scripts": {
     "build-sass-production": "sass scss/_main.scss ../backend/base/static/richie/css/main.css --style=compressed --load-path=node_modules",
     "build-sass": "sass scss/_main.scss ../backend/base/static/richie/css/main.css --load-path=node_modules",
@@ -27,7 +27,7 @@
   ],
   "author": {
     "name": "Open FUN (France Université Numérique)",
-    "email": "fun.dev@fun-mooc.fr"
+    "email": "fun.dev@Atkans.fr"
   },
   "license": "AGPL-3.0-or-later",
   "bugs": {

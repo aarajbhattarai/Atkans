@@ -1,5 +1,5 @@
 """
-Django settings for FUN-MOOC project.
+Django settings for Atkans project.
 """
 import json
 import os

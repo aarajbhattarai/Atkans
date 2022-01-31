@@ -1,4 +1,4 @@
-"""Views for the fun-mooc site."""
+"""Views for the Atkans site."""
 from django.db.models import Q
 from django.http import HttpResponsePermanentRedirect
 

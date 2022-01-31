@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-14 07:57+0545\n"
+"POT-Creation-Date: 2022-01-29 16:13+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,28 +104,19 @@ msgstr ""
 msgid "No associated blogposts"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:26
-msgid "Banner"
+#: templates/courses/cms/category_detail.html:24
+msgid "Hi, Something intresting is coming soon!"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:37
+#: templates/courses/cms/category_detail.html:35
 msgid "category banner"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:44
-#: templates/courses/cms/fragment_category_glimpse.html:40
-msgid "Logo"
-msgstr ""
-
-#: templates/courses/cms/category_detail.html:55
-msgid "category logo"
-msgstr ""
-
-#: templates/courses/cms/category_detail.html:93
+#: templates/courses/cms/category_detail.html:71
 msgid "Sub categories"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:109
+#: templates/courses/cms/category_detail.html:87
 #: templates/courses/cms/organization_detail.html:97
 #: templates/courses/cms/program_detail.html:69
 #, fuzzy
@@ -133,7 +124,7 @@ msgstr ""
 msgid "Related courses"
 msgstr "Nouveaux cours"
 
-#: templates/courses/cms/category_detail.html:118
+#: templates/courses/cms/category_detail.html:96
 #, python-format
 msgid ""
 "\n"
@@ -142,23 +133,23 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:124
+#: templates/courses/cms/category_detail.html:102
 #, fuzzy
 #| msgid "New courses"
 msgid "See all courses"
 msgstr "Nouveaux cours"
 
-#: templates/courses/cms/category_detail.html:141
+#: templates/courses/cms/category_detail.html:119
 #, fuzzy
 #| msgid "Organizations"
 msgid "Related organizations"
 msgstr "Établissements"
 
-#: templates/courses/cms/category_detail.html:160
+#: templates/courses/cms/category_detail.html:138
 msgid "Related blogposts"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:179
+#: templates/courses/cms/category_detail.html:157
 #: templates/courses/cms/organization_detail.html:123
 msgid "Related persons"
 msgstr ""
@@ -182,6 +173,10 @@ msgstr "Aucune session ouverte"
 
 #: templates/courses/cms/fragment_blogpost_glimpse.html:32
 msgid "Learn more"
+msgstr ""
+
+#: templates/courses/cms/fragment_category_glimpse.html:40
+msgid "Logo"
 msgstr ""
 
 #: templates/courses/cms/fragment_error_detail_template_banner.html:7

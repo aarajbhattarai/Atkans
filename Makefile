@@ -21,7 +21,7 @@ COMPOSE_EXEC         = $(COMPOSE) exec
 COMPOSE_EXEC_APP     = $(COMPOSE_EXEC) app-dev
 COMPOSE_TEST_RUN     = $(COMPOSE) run --rm -e DJANGO_CONFIGURATION=Test
 COMPOSE_TEST_RUN_APP = $(COMPOSE_TEST_RUN) app-dev
-WAIT_DB              = $(COMPOSE_RUN) dockerize -wait tcp://db:5432 -timeout 60s
+WAIT_DB              = $(COMPOSE_RUN) dockerize -wait tcp://db:3306 -timeout 60s
 WAIT_ES              = $(COMPOSE_RUN) dockerize -wait tcp://elasticsearch:9200 -timeout 60s
 WAIT_SENTINEL        = $(COMPOSE_RUN) dockerize -wait tcp://redis-sentinel:26379 -wait tcp://redis-primary:6379 -timeout 20s
 

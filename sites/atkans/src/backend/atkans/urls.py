@@ -1,5 +1,5 @@
 """
-FUN-MOOC urls
+Atkans urls
 """
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
@@ -24,6 +24,12 @@ admin.autodiscover()
 admin.site.enable_nav_sidebar = False
 
 urlpatterns = [
+    path(
+        "robots.txt",
+        TemplateView.as_view(
+            template_name="richie/robots.html", content_type="text/plain"
+        ),
+    ),
     path(r"sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
     re_path(
         r"api/{}/".format(API_PREFIX),

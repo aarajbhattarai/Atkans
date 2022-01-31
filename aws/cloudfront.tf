@@ -8,7 +8,7 @@ locals {
 # See bucket policies in s3.tf or documentation for more details:
 # https://www.terraform.io/docs/providers/aws/r/cloudfront_origin_access_identity.html
 resource "aws_cloudfront_origin_access_identity" "richie_oai" {
-  comment = "fun-mooc origin for the ${terraform.workspace} environment"
+  comment = "Atkans origin for the ${terraform.workspace} environment"
 }
 
 resource "aws_cloudfront_distribution" "richie_cloudfront_distribution" {

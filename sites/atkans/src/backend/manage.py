@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-FUN-MOOC management script.
+Atkans management script.
 """
 import os
 import sys

@@ -1,4 +1,4 @@
-"""Test fun-mooc configuration."""
+"""Test Atkans configuration."""
 from unittest import mock
 
 from django.conf import settings

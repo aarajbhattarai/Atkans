@@ -338,68 +338,68 @@ jobs:
         working_directory: ~/fun/sites/<< parameters.site >>/src/backend
 version: 2.1
 workflows:
-    ademe:
+    atkans:
         jobs:
             - check-changelog:
                 filters:
                     branches:
                         ignore: master
-                name: check-changelog-ademe
-                site: ademe
+                name: check-changelog-atkans
+                site: atkans
             - lint-changelog:
                 filters:
                     branches:
                         ignore: master
                     tags:
-                        only: /ademe-.*/
-                name: lint-changelog--ademe
-                site: ademe
+                        only: /atkans-.*/
+                name: lint-changelog--atkans
+                site: atkans
             - build-front-production:
                 filters:
                     tags:
-                        only: /ademe-.*/
-                name: build-front-production-ademe
-                site: ademe
+                        only: /atkans-.*/
+                name: build-front-production-atkans
+                site: atkans
             - lint-front:
                 filters:
                     tags:
-                        only: /ademe-.*/
-                name: lint-front-ademe
+                        only: /atkans-.*/
+                name: lint-front-atkans
                 requires:
-                    - build-front-production-ademe
-                site: ademe
+                    - build-front-production-atkans
+                site: atkans
             - build-back:
                 filters:
                     tags:
-                        only: /ademe-.*/
-                name: build-back-ademe
-                site: ademe
+                        only: /atkans-.*/
+                name: build-back-atkans
+                site: atkans
             - lint-back:
                 filters:
                     tags:
-                        only: /ademe-.*/
-                name: lint-back-ademe
+                        only: /atkans-.*/
+                name: lint-back-atkans
                 requires:
-                    - build-back-ademe
-                site: ademe
+                    - build-back-atkans
+                site: atkans
             - test-back:
                 filters:
                     tags:
-                        only: /ademe-.*/
-                name: test-back-ademe
+                        only: /atkans-.*/
+                name: test-back-atkans
                 requires:
-                    - build-back-ademe
-                site: ademe
+                    - build-back-atkans
+                site: atkans
             - hub:
                 filters:
                     tags:
-                        only: /^ademe-.*/
-                image_name: ademe
-                name: hub-ademe
+                        only: /^atkans-.*/
+                image_name: atkans
+                name: hub-atkans
                 requires:
-                    - lint-front-ademe
-                    - lint-back-ademe
-                site: ademe
+                    - lint-front-atkans
+                    - lint-back-atkans
+                site: atkans
     cnfpt:
         jobs:
             - check-changelog:

@@ -38,10 +38,27 @@ $richie-category-detail-banner-logo-sizing-xl: 25rem !default;
       object-position: center;
       box-shadow: none;
       border-radius: 0;
+      transform: none;
     }
 
     @include m-o-media_empty($background: r-theme-val(category-detail, empty-background));
-
+    @if r-theme-val(category-detail, insert-background-image) {
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4rem;
+        position: absolute;
+        bottom: -0.05rem;
+        left: 0;
+        right: 0;
+        background-image: r-theme-val(category-detail, insert-background-image);
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: 100% 100%;
+        z-index: 2;
+      }
+    }
   }
 
   &__logo {
@@ -72,20 +89,6 @@ $richie-category-detail-banner-logo-sizing-xl: 25rem !default;
       padding-top: 1rem;
       text-align: justify;
       color: r-theme-val(category-detail, intro-title-color);
-
-      img {
-        display: block;
-        margin: 0 auto;
-      }
-
-      @include media-breakpoint-up(lg) {
-        width: calc(70% - 2rem);
-
-        img {
-          display: inline-block;
-          margin: 0;
-        }
-      }
     }
   }
 

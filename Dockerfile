@@ -1,7 +1,7 @@
 ARG NGINX_IMAGE_NAME=fundocker/openshift-nginx
 ARG NGINX_IMAGE_TAG=1.13
 ARG STATIC_ROOT=/data/static
-ARG SITE=atkans
+ARG SITE=funmooc
 
 # The ID of the user running in the container
 ARG DOCKER_USER=10000
@@ -39,12 +39,9 @@ RUN pip install --upgrade pip
 
 RUN mkdir /install && \
     pip install --prefix=/install -r requirements.txt \
-    # Use temporarily a forked version of django-cms and djangocms-admin-style
     # The django-cms fork includes drillable search feature,
-    # it should be removed when this feature will be officialy released.
-    # djangocms-admin-style should be removed when 2.0.3 will be released
-    pip install --prefix=/install \ 
-    git+https://github.com/jbpenrath/djangocms-admin-style@fun#egg=djangocms-admin-style \
+    # it should be removed when this feature will be officially released.
+    pip install --prefix=/install \
     git+https://github.com/jbpenrath/django-cms@fun-3.9.0#egg=django-cms
 
 # ---- Core application image ----
