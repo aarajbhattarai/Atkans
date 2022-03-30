@@ -7597,11 +7597,6 @@ tapable@^2.1.1, tapable@^2.2.0:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-2.2.0.tgz#5c373d281d9c672848213d0e037d1c4165ab426b"
   integrity sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==
 
-tarteaucitronjs@1.9.4:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/tarteaucitronjs/-/tarteaucitronjs-1.9.4.tgz#a0cd6dec1441ea44c8ef71e4ca94f7a09b3c4d75"
-  integrity sha512-b0H5HC6jTI5FnPccsBDinfvG1USx6/NgmOto8Wfv6OZ7EoBtJy6kZRWwb3tBFNj8PwUAdjNb1Ppp7+D8L4z/yQ==
-
 terminal-link@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/terminal-link/-/terminal-link-2.1.1.tgz#14a64a27ab3c0df933ea546fba55f2d078edc994"

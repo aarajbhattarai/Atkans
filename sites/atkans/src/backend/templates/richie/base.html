@@ -20,6 +20,7 @@
             <meta name="msapplication-TileColor" content="##82aef8">
             <meta name="msapplication-config" content="{% static 'richie/favicon/browserconfig.xml' %}">
             <meta name="theme-color" content="#82aef8">
+            <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" as="font" type="font/woff2" crossorigin>
             {% endblock meta_favicons %}
 
             {% block meta_hreflang %}
@@ -87,6 +88,7 @@
                             <ul class="topbar__list"> 
                                 {% show_menu 0 100 0 0 "menu/header_menu.html" %}
                             </ul>
+                            {% language_chooser "menu/language_menu.html" %}
                         </div>
                     </div>
                 </nav>

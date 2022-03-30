@@ -2,16 +2,33 @@
 {% load static category_tags cms_tags extra_tags i18n thumbnail %}
 
 {% block meta_rdfa_context %}
+
     <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ SITE.web_url }}{{ current_page.get_absolute_url }}" />
     <meta property="og:article:published_time" content="{{ current_page.publication_date|date:"c" }}">
     <meta property="og:article:modified_time" content="{{ current_page.changed_date|date:"c" }}">
+    <meta property="og:description" content="{% show_placeholder 'excerpt' request.current_page %}" />
+
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ SITE.web_url }}{{ current_page.get_absolute_url }}">
+    <meta name="twitter:title" content="{{ current_page.get_title|truncatechars:65 }}">
+    <meta name="twitter:description" content="{% show_placeholder 'excerpt' request.current_page %}" />
+
+    <meta itemprop="name" content="{{ current_page.get_title|truncatechars:65 }}">
+    <meta itemprop="description" content="{% show_placeholder 'excerpt' current_page %}" >
 
     {% get_placeholder_plugins "cover" as plugins %}
     {% blockplugin plugins.0 %}
         {% thumbnail instance.picture 845x500 crop upscale subject_location=instance.picture.subject_location as thumb %}
-        <meta property="og:image" content="{{ MEDIA_URL_PREFIX }}{{ thumb.url }}" />
+        <meta property="og:image" content="{{ thumb.url }}" />
         <meta property="og:image:width" content="{{ thumb.width }}" />
         <meta property="og:image:height" content="{{ thumb.height }}" />
+
+        <meta itemprop="image" content="{{ thumb.url }}">
+
+        <meta name="twitter:image" content="{{ thumb.url }}">
     {% endblockplugin %}
 {% endblock meta_rdfa_context %}
 
@@ -96,7 +113,7 @@
                                             {% if instance.picture.width >= 1000 %},{% thumbnail instance.picture 1000x1000 subject_location=instance.picture.subject_location %} 1000w{% endif %}
                                             {% if instance.picture.width >= 2000 %},{% thumbnail instance.picture 2000x2000 subject_location=instance.picture.subject_location %} 2000w{% endif %}
                                         "
-                                        sizes="500px"
+                                        sizes="500px" height="{{ instance.picture.height }}" width="{{ instance.picture.width }}"
                                         alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'blog post cover image' %}{% endif %}"
                                     />
                                 {% endblockplugin %}
@@ -126,13 +143,6 @@
                 {% endblock grid_main %}
 
                 {% block grid_aside %}
-                    <div class="blogpost-detail__grid-aside">
-                        {% block headline %}
-                            <div class="blogpost-detail__headline">
-                                {% static_placeholder "static_blogpost_headline" %}
-                                {% placeholder "headline" %}
-                            </div>
-                        {% endblock headline %}
 
                         {% block related_blogposts %}
                             <div class="blogpost-glimpse-list">

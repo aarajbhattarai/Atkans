@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-29 16:13+0545\n"
+"POT-Creation-Date: 2022-03-21 22:34+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,15 +65,15 @@ msgstr "Français"
 msgid "Unsorted uploads are not allowed."
 msgstr "Les téléchargements non classés sont interdits"
 
-#: templates/courses/cms/blogpost_detail.html:53
+#: templates/courses/cms/blogpost_detail.html:73
 msgid "No categories yet."
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:65
+#: templates/courses/cms/blogpost_detail.html:85
 msgid "No author yet"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:89
+#: templates/courses/cms/blogpost_detail.html:109
 #: templates/courses/cms/fragment_blogpost_glimpse.html:10
 #: templates/courses/cms/fragment_blogpost_glimpse.html:41
 #: templates/courses/cms/fragment_blogpost_glimpse.html:72
@@ -82,21 +82,21 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:100
+#: templates/courses/cms/blogpost_detail.html:120
 msgid "blog post cover image"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:110
+#: templates/courses/cms/blogpost_detail.html:130
 #: templates/courses/cms/program_detail.html:51
 msgid "No excerpt content"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:120
+#: templates/courses/cms/blogpost_detail.html:140
 #: templates/courses/cms/program_detail.html:59
 msgid "No body content"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:139
+#: templates/courses/cms/blogpost_detail.html:159
 msgid "Related posts"
 msgstr "相关文章"
 
@@ -109,7 +109,8 @@ msgid "Hi, Something intresting is coming soon!"
 msgstr ""
 
 #: templates/courses/cms/category_detail.html:35
-msgid "category banner"
+#: templates/courses/cms/category_detail.html:53
+msgid "Atkans"
 msgstr ""
 
 #: templates/courses/cms/category_detail.html:71

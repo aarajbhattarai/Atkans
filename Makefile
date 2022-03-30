@@ -7,8 +7,8 @@ COLOR_RESET   = \033[0m
 # -- Docker
 DOCKER_UID           = $(shell id -u)
 DOCKER_GID           = $(shell id -g)
-NGINX_IMAGE_NAME     = fundocker/openshift-nginx
-NGINX_IMAGE_TAG      = 1.13
+NGINX_IMAGE_NAME     = nginx
+NGINX_IMAGE_TAG      = 1.20.1
 
 COMPOSE              = \
   NGINX_IMAGE_NAME="$(NGINX_IMAGE_NAME)" \
@@ -26,6 +26,8 @@ WAIT_ES              = $(COMPOSE_RUN) dockerize -wait tcp://elasticsearch:9200 -
 WAIT_SENTINEL        = $(COMPOSE_RUN) dockerize -wait tcp://redis-sentinel:26379 -wait tcp://redis-primary:6379 -timeout 20s
 
 # -- Node
+
+
 
 # We must run node with a /home because yarn tries to write to ~/.yarnrc. If the
 # ID of our host user (with which we run the container) does not exist in the
@@ -56,10 +58,10 @@ bootstrap:  ## install development dependencies
 .PHONY: bootstrap
 
 # == Docker
-build: ## build all containers
-	$(COMPOSE) build app
-	$(COMPOSE) build nginx
-	$(COMPOSE) build app-dev
+build: ## build all containers. Pass extra arguments to docker-compose using: make ARGS="--no-cache" build
+	$(COMPOSE) build $(ARGS) app
+	$(COMPOSE) build $(ARGS) nginx
+	$(COMPOSE) build $(ARGS) app-dev
 .PHONY: build
 
 reset:  ## Remove database and local files
@@ -167,7 +169,6 @@ demo-site: ## create a demo site
 
 init: ## create base site structure
 	@$(MANAGE) richie_init
-	@${MAKE} search-index
 .PHONY: init
 
 # Nota bene: Black should come after isort just in case they don't agree...
@@ -235,7 +236,6 @@ i18n-front: ## Extract and compile translation files used for react-intl
 
 migrate: ## perform database migrations
 	@$(COMPOSE) up -d db
-	@$(WAIT_DB)
 	@$(MANAGE) migrate
 .PHONY: migrate
 
@@ -267,7 +267,7 @@ ci-run: ## start the wsgi server (and linked services)
 	# As we use a remote docker environment, we should explicitly use the same
 	# network to check containers status
 	@echo "Wait for services to be up..."
-	docker run --network container:fun_db_1 --rm jwilder/dockerize -wait tcp://localhost:5432 -timeout 60s
+	docker run --network container:fun_db_1 --rm jwilder/dockerize -wait tcp://localhost:3306 -timeout 60s
 	docker run --network container:fun_elasticsearch_1 --rm jwilder/dockerize -wait tcp://localhost:9200 -timeout 60s
 .PHONY: ci-run
 
