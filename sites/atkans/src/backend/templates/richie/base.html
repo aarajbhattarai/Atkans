@@ -20,6 +20,7 @@
             <meta name="msapplication-TileColor" content="##82aef8">
             <meta name="msapplication-config" content="{% static 'richie/favicon/browserconfig.xml' %}">
             <meta name="theme-color" content="#82aef8">
+            
             <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" as="font" type="font/woff2" crossorigin>
             {% endblock meta_favicons %}
 
@@ -56,6 +57,7 @@
         {% block css_links %}
         <link rel="stylesheet" type="text/css" href="{% static 'richie/css/main.css' %}">
         {% endblock css_links %}
+
     </head>
     <body{% block body_rdfa %}{% endblock body_rdfa %}>
         {% include "richie/icons.html" %}

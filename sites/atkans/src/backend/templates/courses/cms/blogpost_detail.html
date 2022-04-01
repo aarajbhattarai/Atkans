@@ -25,9 +25,7 @@
         <meta property="og:image" content="{{ thumb.url }}" />
         <meta property="og:image:width" content="{{ thumb.width }}" />
         <meta property="og:image:height" content="{{ thumb.height }}" />
-
         <meta itemprop="image" content="{{ thumb.url }}">
-
         <meta name="twitter:image" content="{{ thumb.url }}">
     {% endblockplugin %}
 {% endblock meta_rdfa_context %}
@@ -143,7 +141,7 @@
                 {% endblock grid_main %}
 
                 {% block grid_aside %}
-
+                <div class="blogpost-detail__grid-aside">
                         {% block related_blogposts %}
                             <div class="blogpost-glimpse-list">
                                 <p class="blogpost-glimpse-list__title"><span>{% trans 'Related posts' %}</span></p>

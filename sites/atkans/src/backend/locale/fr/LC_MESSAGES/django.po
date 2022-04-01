@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-21 22:34+0545\n"
+"POT-Creation-Date: 2022-04-01 07:42+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,15 +65,15 @@ msgstr "Français"
 msgid "Unsorted uploads are not allowed."
 msgstr "Les téléchargements non classés sont interdits"
 
-#: templates/courses/cms/blogpost_detail.html:73
+#: templates/courses/cms/blogpost_detail.html:68
 msgid "No categories yet."
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:85
+#: templates/courses/cms/blogpost_detail.html:80
 msgid "No author yet"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:109
+#: templates/courses/cms/blogpost_detail.html:104
 #: templates/courses/cms/fragment_blogpost_glimpse.html:10
 #: templates/courses/cms/fragment_blogpost_glimpse.html:41
 #: templates/courses/cms/fragment_blogpost_glimpse.html:72
@@ -82,21 +82,21 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:120
+#: templates/courses/cms/blogpost_detail.html:115
 msgid "blog post cover image"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:130
+#: templates/courses/cms/blogpost_detail.html:125
 #: templates/courses/cms/program_detail.html:51
 msgid "No excerpt content"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:140
+#: templates/courses/cms/blogpost_detail.html:135
 #: templates/courses/cms/program_detail.html:59
 msgid "No body content"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:159
+#: templates/courses/cms/blogpost_detail.html:147
 msgid "Related posts"
 msgstr ""
 
@@ -295,19 +295,19 @@ msgstr ""
 msgid "You are here:"
 msgstr ""
 
-#: templates/richie/base.html:70
+#: templates/richie/base.html:73
 msgid "Skip to main content"
 msgstr ""
 
-#: templates/richie/base.html:82
+#: templates/richie/base.html:85
 msgid "Go to homepage"
 msgstr ""
 
-#: templates/richie/base.html:127
+#: templates/richie/base.html:131
 msgid "LET'S STAY IN TOUCH"
 msgstr ""
 
-#: templates/richie/base.html:140
+#: templates/richie/base.html:144
 msgid "All Rights Reserved."
 msgstr ""
 

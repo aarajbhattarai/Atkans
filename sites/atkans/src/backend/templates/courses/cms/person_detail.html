@@ -2,7 +2,7 @@
 {% load cms_tags extra_tags i18n pagination_tags static thumbnail %}
 
 {% block meta_rdfa_context %}
-    <meta property="og:type" content="profile" />
+        <meta property="og:type" content="profile" />
 
     {% get_placeholder_plugins "portrait" as og_image_plugins %}
     {% blockplugin og_image_plugins.0 %}
@@ -56,7 +56,7 @@
                             <div class="subheader__media subheader__media--locket subheader__empty">
                                 <img src="{% static "richie/images/empty/person_portrait.png" %}"
                                         class="subheader__empty--avatar"
-                                        alt="">
+                                        alt="{{ current_page.get_title|truncatechars:65 }}">
                             </div>
                             {% endget_placeholder_plugins %}
                             {% blockplugin plugins.0 %}
