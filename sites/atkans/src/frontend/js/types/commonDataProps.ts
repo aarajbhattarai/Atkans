@@ -1,4 +1,5 @@
-import { Nullable } from 'utils/types';
+import { Nullable } from 'types/utils';
+import { Backend as JoanieBackend } from 'types/Joanie';
 
 /**
  * Common data properties that are passed by the backend to all React components as they are
@@ -20,8 +21,10 @@ export interface CommonDataProps {
     authentication: AuthenticationBackend;
     csrftoken: string;
     environment: string;
-    lms_backends: LMSBackend[];
+    lms_backends?: LMSBackend[];
+    joanie_backend?: JoanieBackend;
     release: string;
     sentry_dsn: Nullable<string>;
+    web_analytics_provider?: Nullable<string>;
   };
 }

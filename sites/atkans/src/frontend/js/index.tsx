@@ -9,10 +9,10 @@
 // regardless of their use throughout the Richie codebase itself.
 import 'core-js/modules/es.array.iterator';
 import 'core-js/modules/es.promise';
-
-import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
+import { QueryClientProvider } from 'react-query';
+import createQueryClient from 'utils/react-query/createQueryClient';
 
 import { Root } from 'components/Root';
 import { handle } from 'utils/errors/handle';
@@ -93,11 +93,16 @@ async function render() {
     reactRoot.setAttribute('class', 'richie-react richie-react--root');
     document.body.append(reactRoot);
 
+    // React-query
+    const queryClient = createQueryClient({ logger: true, persistor: true });
+
     // Render the tree inside a shared `IntlProvider` so all components are able to access translated strings.
     ReactDOM.render(
-      <IntlProvider locale={locale} messages={translatedMessages}>
-        <Root richieReactSpots={richieReactSpots} />
-      </IntlProvider>,
+      <QueryClientProvider client={queryClient}>
+        <IntlProvider locale={locale} messages={translatedMessages} defaultLocale="en-US">
+          <Root richieReactSpots={richieReactSpots} />
+        </IntlProvider>
+      </QueryClientProvider>,
       reactRoot,
     );
   }

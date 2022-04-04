@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-01 07:42+0545\n"
+"POT-Creation-Date: 2022-04-03 09:00+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,20 +104,20 @@ msgstr "相关文章"
 msgid "No associated blogposts"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:24
+#: templates/courses/cms/category_detail.html:27
 msgid "Hi, Something intresting is coming soon!"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:35
-#: templates/courses/cms/category_detail.html:53
+#: templates/courses/cms/category_detail.html:38
+#: templates/courses/cms/category_detail.html:56
 msgid "Atkans"
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:71
+#: templates/courses/cms/category_detail.html:74
 msgid "Sub categories"
 msgstr "子类别"
 
-#: templates/courses/cms/category_detail.html:87
+#: templates/courses/cms/category_detail.html:90
 #: templates/courses/cms/organization_detail.html:97
 #: templates/courses/cms/program_detail.html:69
 #, fuzzy
@@ -125,7 +125,7 @@ msgstr "子类别"
 msgid "Related courses"
 msgstr "Nouveaux cours"
 
-#: templates/courses/cms/category_detail.html:96
+#: templates/courses/cms/category_detail.html:99
 #, python-format
 msgid ""
 "\n"
@@ -134,23 +134,23 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: templates/courses/cms/category_detail.html:102
+#: templates/courses/cms/category_detail.html:105
 #, fuzzy
 #| msgid "New courses"
 msgid "See all courses"
 msgstr "Nouveaux cours"
 
-#: templates/courses/cms/category_detail.html:119
+#: templates/courses/cms/category_detail.html:122
 #, fuzzy
 #| msgid "Organizations"
 msgid "Related organizations"
 msgstr "相关机构"
 
-#: templates/courses/cms/category_detail.html:138
+#: templates/courses/cms/category_detail.html:141
 msgid "Related blogposts"
 msgstr "相关博文"
 
-#: templates/courses/cms/category_detail.html:157
+#: templates/courses/cms/category_detail.html:160
 #: templates/courses/cms/organization_detail.html:123
 msgid "Related persons"
 msgstr "相关人士"

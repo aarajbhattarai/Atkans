@@ -1,6 +1,6 @@
 import { Course } from 'types/Course';
 import { FacetedFilterDefinition } from 'types/filters';
-import { Maybe, Nullable } from 'utils/types';
+import { Maybe, Nullable } from 'types/utils';
 import { User } from 'types/User';
 import { Enrollment } from 'types';
 
@@ -38,6 +38,7 @@ export interface APICourseSearchResponse {
 }
 
 export interface APIAuthentication {
+  accessToken?: () => Nullable<string>;
   login: () => void;
   logout: () => Promise<void>;
   me: () => Promise<Nullable<User>>;
@@ -45,9 +46,9 @@ export interface APIAuthentication {
 }
 
 export interface APIEnrollment {
-  get: (url: string, user: Nullable<User>) => Promise<Nullable<Enrollment>>;
-  isEnrolled: (url: string, user: Nullable<User>) => Promise<boolean>;
-  set: (url: string, user: User) => Promise<boolean>;
+  get(url: string, user: Nullable<User>): Promise<Nullable<Enrollment>>;
+  isEnrolled(enrollment: Maybe<Nullable<Enrollment>>): Promise<Maybe<boolean>>;
+  set(url: string, user: User): Promise<boolean>;
 }
 
 export interface APILms {
@@ -55,17 +56,18 @@ export interface APILms {
   enrollment: APIEnrollment;
 }
 
-export interface ApiOptions {
-  routes: {
-    [key: string]: {
-      [key: string]: string;
-    };
-  };
+export interface APIRoute {
+  [key: string]: string | APIRoute;
 }
 
-export enum ApiBackend {
+export interface APIOptions {
+  routes: APIRoute;
+}
+
+export enum APIBackend {
   BASE = 'base',
   FONZIE = 'fonzie',
+  JOANIE = 'joanie',
   OPENEDX_DOGWOOD = 'openedx-dogwood',
   OPENEDX_HAWTHORN = 'openedx-hawthorn',
 }

@@ -5,9 +5,11 @@ import { getSuggestionsSection } from './getSuggestionsSection';
 
 const mockHandle: jest.Mock<typeof handle> = handle as any;
 jest.mock('utils/errors/handle');
+jest.mock('utils/context', () => jest.fn());
 
 describe('common/searchFields/getSuggestionsSection', () => {
   afterEach(() => {
+    jest.resetAllMocks();
     fetchMock.restore();
   });
 
@@ -50,6 +52,22 @@ describe('common/searchFields/getSuggestionsSection', () => {
     await getSuggestionsSection('courses', 'Courses', 'some search');
     expect(mockHandle).toHaveBeenCalledWith(
       new Error('Failed to get list from courses autocomplete : 403'),
+    );
+  });
+
+  it('reports the error and the explanation when the server returns a 400 error', async () => {
+    fetchMock.get('/api/v1.0/courses/autocomplete/?query=error', {
+      body: {
+        errors: ['Missing autocomplete "query" for request to richie_courses.'],
+      },
+      status: 400,
+    });
+    await getSuggestionsSection('courses', 'Courses', 'error');
+    expect(mockHandle).toHaveBeenCalledWith(
+      new Error('Failed to get list from courses autocomplete : 400'),
+      {
+        errors: ['Missing autocomplete "query" for request to richie_courses.'],
+      },
     );
   });
 
