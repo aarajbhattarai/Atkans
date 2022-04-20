@@ -445,35 +445,73 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     # fallback/default languages throughout the app.
     # Use "en" as default as it is the language that is most likely to be spoken by any visitor
     # when their preferred language, whatever it is, is unavailable
-    LANGUAGES = (("en", _("English")), ("fr", _("French")))
-
+    LANGUAGES = ( ("en", _("English")), ("fr", _("French")))
+    CMS_UNIHANDECODE_HOST="/static/unihandecode/"
+    CMS_UNIHANDECODE_VERSION= "1.0.0"
+    CMS_UNIHANDECODE_DECODERS=['zh']
     # - Django CMS
     CMS_LANGUAGES = {
-        "default": {
-            "public": True,
-            "hide_untranslated": False,
-            "redirect_on_fallback": True,
-            "fallbacks": ["en", "fr"],
-        },
-        1: [
+        1:[
             {
                 "public": True,
                 "code": "en",
-                "hide_untranslated": False,
+                "hide_untranslated": True,
                 "name": _("English"),
                 "fallbacks": ["fr"],
                 "redirect_on_fallback": False,
             },
+
             {
                 "public": True,
                 "code": "fr",
-                "hide_untranslated": False,
+                "hide_untranslated": True,
                 "name": _("French"),
                 "fallbacks": ["en"],
                 "redirect_on_fallback": False,
             },
         ],
+        "default":{
+        "public": True,
+        "hide_untranslated": True,
+        "redirect_on_fallback": True,
+        "fallbacks": ["en", "fr"],
+        },
     }
+    #     CMS_LANGUAGES = {
+    #     1:[
+    #         {
+    #             "public": True,
+    #             "code": "en",
+    #             "hide_untranslated": True,
+    #             "name": _("English"),
+    #             "fallbacks": ["fr","zh-CN"],
+    #             "redirect_on_fallback": False,
+    #         },
+
+    #         {
+    #             "public": True,
+    #             "code": "fr",
+    #             "hide_untranslated": True,
+    #             "name": _("French"),
+    #             "fallbacks": ["en","zh-CN"],
+    #             "redirect_on_fallback": False,
+    #         },
+    #         {
+    #             "public": True,
+    #             "code": "zh-CN",
+    #             "hide_untranslated": True,
+    #             "name": _("Chinese"),
+    #             "fallbacks": ["en","fr"],
+    #             "redirect_on_fallback": False,
+    #         },
+    #     ],
+    #     "default":{
+    #     "public": True,
+    #     "hide_untranslated": True,
+    #     "redirect_on_fallback": True,
+    #     "fallbacks": ["en", "fr", "zh-CN"],
+    #     },
+    # }
 
     # - Django Parler
     PARLER_LANGUAGES = CMS_LANGUAGES

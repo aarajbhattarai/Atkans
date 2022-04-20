@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-03 09:00+0545\n"
+"POT-Creation-Date: 2022-04-15 15:45+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,13 +53,17 @@ msgstr "组织"
 msgid "Contributors"
 msgstr "贡献者"
 
-#: atkans/settings.py:448 atkans/settings.py:463
+#: atkans/settings.py:448 atkans/settings.py:459
 msgid "English"
 msgstr "英语"
 
-#: atkans/settings.py:448 atkans/settings.py:471
+#: atkans/settings.py:448 atkans/settings.py:468
 msgid "French"
 msgstr "Français"
+
+#: atkans/settings.py:448 atkans/settings.py:476
+msgid "Chinese"
+msgstr ""
 
 #: base/admin.py:32
 msgid "Unsorted uploads are not allowed."

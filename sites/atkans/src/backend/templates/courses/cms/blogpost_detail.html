@@ -9,7 +9,6 @@
     <meta property="og:article:modified_time" content="{{ current_page.changed_date|date:"c" }}">
     <meta property="og:description" content="{% show_placeholder 'excerpt' request.current_page %}" />
 
-
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="{{ SITE.web_url }}{{ current_page.get_absolute_url }}">
@@ -111,7 +110,7 @@
                                             {% if instance.picture.width >= 1000 %},{% thumbnail instance.picture 1000x1000 subject_location=instance.picture.subject_location %} 1000w{% endif %}
                                             {% if instance.picture.width >= 2000 %},{% thumbnail instance.picture 2000x2000 subject_location=instance.picture.subject_location %} 2000w{% endif %}
                                         "
-                                        sizes="500px" height="{{ instance.picture.height }}" width="{{ instance.picture.width }}"
+                                        sizes="500px"  
                                         alt="{% if instance.picture.default_alt_text %}{{ instance.picture.default_alt_text }}{% else %}{% trans 'blog post cover image' %}{% endif %}"
                                     />
                                 {% endblockplugin %}

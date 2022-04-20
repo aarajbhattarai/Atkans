@@ -1,11 +1,13 @@
 {% for ancestor in ancestors %}
+
 <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumbs__item">
     <meta itemprop="position" content="{{ forloop.counter }}" >
     {% if not forloop.last %}
-     <a itemscope itemtype="https://schema.org/WebPage"
-    itemprop="item" itemid="{{ ancestor.get_absolute_url }}" href="{{ ancestor.get_absolute_url }}"><span itemprop="name">{{ ancestor.get_menu_title }} </span> </a>
+    <a itemscope itemtype="https://schema.org/WebPage"
+    itemprop="item" itemid="{{ ancestor.get_absolute_url }}" href="{{ ancestor.get_absolute_url }}">
+    <span itemprop="name">{{ ancestor.get_menu_title }} </span> </a>
     {% else %}
-    <span class="active">{{ ancestor.get_menu_title }}</span>
+    <span class="active" itemprop="name" >{{ ancestor.get_menu_title }}</span>
     {% endif %}
 </li>
 {% endfor %}

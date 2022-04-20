@@ -7,8 +7,8 @@ COLOR_RESET   = \033[0m
 # -- Docker
 DOCKER_UID           = $(shell id -u)
 DOCKER_GID           = $(shell id -g)
-NGINX_IMAGE_NAME     = nginx
-NGINX_IMAGE_TAG      = 1.20.1
+NGINX_IMAGE_NAME     = fundocker/openshift-nginx
+NGINX_IMAGE_TAG      = 1.13
 
 COMPOSE              = \
   NGINX_IMAGE_NAME="$(NGINX_IMAGE_NAME)" \
@@ -26,8 +26,6 @@ WAIT_ES              = $(COMPOSE_RUN) dockerize -wait tcp://elasticsearch:9200 -
 WAIT_SENTINEL        = $(COMPOSE_RUN) dockerize -wait tcp://redis-sentinel:26379 -wait tcp://redis-primary:6379 -timeout 20s
 
 # -- Node
-
-
 
 # We must run node with a /home because yarn tries to write to ~/.yarnrc. If the
 # ID of our host user (with which we run the container) does not exist in the
@@ -58,9 +56,7 @@ bootstrap:  ## install development dependencies
 .PHONY: bootstrap
 
 # == Docker
-build: ## build all containers. Pass extra arguments to docker-compose using: make ARGS="--no-cache" build
-	$(COMPOSE) build app
-	$(COMPOSE) build nginx
+build: ## build all containers
 	$(COMPOSE) build app-dev
 .PHONY: build
 
@@ -79,7 +75,6 @@ logs: ## display app logs (follow mode)
 .PHONY: logs
 
 run: ## start the wsgi (production) or development server
-	@$(COMPOSE) up -d nginx
 	@$(COMPOSE) up -d app-dev
 	@$(WAIT_DB)
 .PHONY: run
@@ -236,6 +231,7 @@ i18n-front: ## Extract and compile translation files used for react-intl
 
 migrate: ## perform database migrations
 	@$(COMPOSE) up -d db
+	@$(WAIT_DB)
 	@$(MANAGE) migrate
 .PHONY: migrate
 

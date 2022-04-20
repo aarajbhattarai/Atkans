@@ -79,11 +79,11 @@
             <header id="site-header">
                 <nav class="topbar {% block topbar_classes %}{% endblock topbar_classes %}" id="main-menu">
                     <div class="topbar__container">
-                        <div class="topbar__brand">
+                        <div class="topbar__brand" itemscope itemtype="https://schema.org/Brand">
                             <button class="topbar__hamburger"
                                     data-target="main-menu" aria-label="menu" aria-expanded="false">&#8801;</button>
                             <a href="/" title="{% trans "Go to homepage" %}" rel="home" accesskey="h">
-                                <img src="{% static "richie/images/logo.svg" %}" class="topbar__logo" alt="{{ SITE.name }}">
+                                <img src="{% static "richie/images/logo.svg" %}" class="topbar__logo" alt="{{ SITE.name }}" itemprop="logo">
                             </a>
                         </div>
                         <div class="topbar__menu">
