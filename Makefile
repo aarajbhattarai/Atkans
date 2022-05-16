@@ -41,6 +41,8 @@ MANAGE = $(COMPOSE_RUN_APP) python manage.py
 # -- Rules
 default: help
 
+
+
 bootstrap: \
   env.d/aws \
   data/media/$(RICHIE_SITE)/.keep \
@@ -52,9 +54,16 @@ bootstrap: \
   run \
   migrate \
   init
-bootstrap:  ## install development dependencies
+ ## install development dependencies
 .PHONY: bootstrap
 
+cmscheck: 
+	@$(MANAGE) cms check
+.PHONY: cmscheck
+
+flush: 
+	@$(MANAGE) flush
+.PHONY: flush
 # == Docker
 build: ## build all containers
 	$(COMPOSE) build app-dev

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-15 15:45+0545\n"
+"POT-Creation-Date: 2022-05-14 23:46+0545\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,31 +53,35 @@ msgstr "Établissements"
 msgid "Contributors"
 msgstr "Contributeurs"
 
-#: atkans/settings.py:448 atkans/settings.py:459
+#: atkans/settings.py:448 atkans/settings.py:486
 msgid "English"
 msgstr "Anglais"
 
-#: atkans/settings.py:448 atkans/settings.py:468
+#: atkans/settings.py:448 atkans/settings.py:495
 msgid "French"
 msgstr "Français"
 
-#: atkans/settings.py:448 atkans/settings.py:476
+#: atkans/settings.py:448
 msgid "Chinese"
+msgstr ""
+
+#: atkans/settings.py:503
+msgid "Chinese (S)"
 msgstr ""
 
 #: base/admin.py:32
 msgid "Unsorted uploads are not allowed."
 msgstr "Les téléchargements non classés sont interdits"
 
-#: templates/courses/cms/blogpost_detail.html:68
+#: templates/courses/cms/blogpost_detail.html:67
 msgid "No categories yet."
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:80
+#: templates/courses/cms/blogpost_detail.html:79
 msgid "No author yet"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:104
+#: templates/courses/cms/blogpost_detail.html:103
 #: templates/courses/cms/fragment_blogpost_glimpse.html:10
 #: templates/courses/cms/fragment_blogpost_glimpse.html:41
 #: templates/courses/cms/fragment_blogpost_glimpse.html:72
@@ -86,21 +90,21 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:115
+#: templates/courses/cms/blogpost_detail.html:114
 msgid "blog post cover image"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:125
+#: templates/courses/cms/blogpost_detail.html:124
 #: templates/courses/cms/program_detail.html:51
 msgid "No excerpt content"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:135
+#: templates/courses/cms/blogpost_detail.html:134
 #: templates/courses/cms/program_detail.html:59
 msgid "No body content"
 msgstr ""
 
-#: templates/courses/cms/blogpost_detail.html:147
+#: templates/courses/cms/blogpost_detail.html:146
 msgid "Related posts"
 msgstr ""
 
@@ -295,23 +299,23 @@ msgstr ""
 msgid "Your browser doesn't support this video format."
 msgstr ""
 
-#: templates/menu/breadcrumbs.html:4
+#: templates/menu/breadcrumbs.html:5
 msgid "You are here:"
 msgstr ""
 
-#: templates/richie/base.html:73
+#: templates/richie/base.html:82
 msgid "Skip to main content"
 msgstr ""
 
-#: templates/richie/base.html:85
+#: templates/richie/base.html:94
 msgid "Go to homepage"
 msgstr ""
 
-#: templates/richie/base.html:131
+#: templates/richie/base.html:140
 msgid "LET'S STAY IN TOUCH"
 msgstr ""
 
-#: templates/richie/base.html:144
+#: templates/richie/base.html:153
 msgid "All Rights Reserved."
 msgstr ""
 
