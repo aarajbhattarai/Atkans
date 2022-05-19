@@ -19,15 +19,15 @@ msgstr ""
 
 #: atkans/settings.py:256
 msgid "Teaser"
-msgstr "语言"
+msgstr "预告"
 
 #: atkans/settings.py:336 atkans/settings.py:340
 msgid "New courses"
-msgstr "Nouveaux cours"
+msgstr "新课程"
 
 #: atkans/settings.py:351
 msgid "Availability"
-msgstr "Disponibilité"
+msgstr "可利用性"
 
 #: atkans/settings.py:361
 msgid "Languages"
@@ -35,23 +35,23 @@ msgstr "语言"
 
 #: atkans/settings.py:376
 msgid "Types"
-msgstr ""
+msgstr "类型"
 
 #: atkans/settings.py:389
 msgid "Subjects"
-msgstr "科目"
+msgstr "课题"
 
 #: atkans/settings.py:402
 msgid "Collections"
-msgstr "收藏"
+msgstr "收藏品"
 
 #: atkans/settings.py:415 templates/courses/cms/person_detail.html:103
 msgid "Organizations"
-msgstr "组织"
+msgstr "组织机构"
 
 #: atkans/settings.py:428
 msgid "Contributors"
-msgstr "贡献者"
+msgstr "撰稿人"
 
 #: atkans/settings.py:448 atkans/settings.py:486
 msgid "English"
@@ -59,27 +59,27 @@ msgstr "英语"
 
 #: atkans/settings.py:448 atkans/settings.py:495
 msgid "French"
-msgstr "Français"
+msgstr "法国"
 
 #: atkans/settings.py:448
 msgid "Chinese"
-msgstr ""
+msgstr "中国"
 
 #: atkans/settings.py:503
 msgid "Chinese (S)"
-msgstr ""
+msgstr "中文(S)"
 
 #: base/admin.py:32
 msgid "Unsorted uploads are not allowed."
-msgstr "Les téléchargements non classés sont interdits"
+msgstr "不允许未经排序的上传。"
 
 #: templates/courses/cms/blogpost_detail.html:67
 msgid "No categories yet."
-msgstr ""
+msgstr "还没有类别。"
 
 #: templates/courses/cms/blogpost_detail.html:79
 msgid "No author yet"
-msgstr ""
+msgstr "尚无作者"
 
 #: templates/courses/cms/blogpost_detail.html:103
 #: templates/courses/cms/fragment_blogpost_glimpse.html:10
@@ -88,38 +88,38 @@ msgstr ""
 #: templates/courses/cms/fragment_program_glimpse.html:8
 #: templates/courses/cms/program_detail.html:31
 msgid "Cover"
-msgstr ""
+msgstr "覆盖"
 
 #: templates/courses/cms/blogpost_detail.html:114
 msgid "blog post cover image"
-msgstr ""
+msgstr "博文封面图片"
 
 #: templates/courses/cms/blogpost_detail.html:124
 #: templates/courses/cms/program_detail.html:51
 msgid "No excerpt content"
-msgstr ""
+msgstr "没有摘录内容"
 
 #: templates/courses/cms/blogpost_detail.html:134
 #: templates/courses/cms/program_detail.html:59
 msgid "No body content"
-msgstr ""
+msgstr "无正文内容"
 
 #: templates/courses/cms/blogpost_detail.html:146
 msgid "Related posts"
-msgstr "相关文章"
+msgstr "相关帖子"
 
 #: templates/courses/cms/blogpost_list.html:36
 msgid "No associated blogposts"
-msgstr ""
+msgstr "没有相关的博文"
 
 #: templates/courses/cms/category_detail.html:27
 msgid "Hi, Something intresting is coming soon!"
-msgstr ""
+msgstr "嗨，有趣的事情马上就要发生了!"
 
 #: templates/courses/cms/category_detail.html:38
 #: templates/courses/cms/category_detail.html:56
 msgid "Atkans"
-msgstr ""
+msgstr "阿特金斯"
 
 #: templates/courses/cms/category_detail.html:74
 msgid "Sub categories"
@@ -131,7 +131,7 @@ msgstr "子类别"
 #, fuzzy
 #| msgid "New courses"
 msgid "Related courses"
-msgstr "Nouveaux cours"
+msgstr "相关课程"
 
 #: templates/courses/cms/category_detail.html:99
 #, python-format
@@ -146,13 +146,13 @@ msgstr ""
 #, fuzzy
 #| msgid "New courses"
 msgid "See all courses"
-msgstr "Nouveaux cours"
+msgstr "查看所有课程"
 
 #: templates/courses/cms/category_detail.html:122
 #, fuzzy
 #| msgid "Organizations"
 msgid "Related organizations"
-msgstr "相关机构"
+msgstr "相关组织"
 
 #: templates/courses/cms/category_detail.html:141
 msgid "Related blogposts"
@@ -161,32 +161,32 @@ msgstr "相关博文"
 #: templates/courses/cms/category_detail.html:160
 #: templates/courses/cms/organization_detail.html:123
 msgid "Related persons"
-msgstr "相关人士"
+msgstr "相关人员"
 
 #: templates/courses/cms/category_list.html:20
 msgid "No categories"
-msgstr ""
+msgstr "没有类别"
 
 #: templates/courses/cms/course_detail.html:17
 msgctxt "course_detail__title"
 msgid "Other course runs"
-msgstr "Autres sessions"
+msgstr "其他课程的运行"
 
 #: templates/courses/cms/course_detail.html:26
 msgid "No other open course runs"
-msgstr "Aucune autre session ouverte"
+msgstr "没有其他公开课程的运行"
 
 #: templates/courses/cms/course_detail.html:30
 msgid "No open course runs"
-msgstr "Aucune session ouverte"
+msgstr "没有公开赛跑"
 
 #: templates/courses/cms/fragment_blogpost_glimpse.html:32
 msgid "Learn more"
-msgstr ""
+msgstr "了解更多"
 
 #: templates/courses/cms/fragment_category_glimpse.html:40
 msgid "Logo"
-msgstr ""
+msgstr "徽标"
 
 #: templates/courses/cms/fragment_error_detail_template_banner.html:7
 #, python-format
@@ -207,30 +207,30 @@ msgstr "描述"
 #: templates/courses/cms/fragment_organization_main_logo.html:16
 #: templates/courses/cms/fragment_organization_main_logo.html:39
 msgid "Main organization"
-msgstr ""
+msgstr "主要组织"
 
 #: templates/courses/cms/fragment_organization_main_logo.html:29
 #, fuzzy
 #| msgid "Organizations"
 msgid "main organization logo"
-msgstr "机构"
+msgstr "主要组织标志"
 
 #: templates/courses/cms/organization_detail.html:41
 #, fuzzy
 #| msgid "Organizations"
 msgid "organization banner"
-msgstr "Établissements"
+msgstr "组织旗帜"
 
 #: templates/courses/cms/organization_detail.html:62
 #, fuzzy
 #| msgid "Organizations"
 msgid "organization logo"
-msgstr "Établissements"
+msgstr "组织标志"
 
 #: templates/courses/cms/organization_detail.html:78
 #: templates/courses/cms/person_detail.html:38
 msgid "No associated categories"
-msgstr ""
+msgstr "没有相关类别"
 
 #: templates/courses/cms/organization_detail.html:105
 #, python-format
@@ -245,28 +245,28 @@ msgstr ""
 #, fuzzy
 #| msgid "Organizations"
 msgid "No organization yet"
-msgstr "Établissements"
+msgstr "尚无组织"
 
 #: templates/courses/cms/person_detail.html:48
 msgid "Enter your bio here..."
-msgstr ""
+msgstr "在此输入你的简历..."
 
 #: templates/courses/cms/person_detail.html:72
 #, python-format
 msgid "%(title)s avatar"
-msgstr ""
+msgstr "%(title)s 阿凡达"
 
 #: templates/courses/cms/person_detail.html:106
 #, fuzzy
 #| msgid "Organizations"
 msgid "No associated organizations"
-msgstr "Établissements"
+msgstr "没有相关组织"
 
 #: templates/courses/cms/person_detail.html:120
 #, fuzzy
 #| msgid "New courses"
 msgid "Courses"
-msgstr "Nouveaux cours"
+msgstr "课程"
 
 #: templates/courses/cms/person_detail.html:128
 #, python-format
@@ -279,43 +279,43 @@ msgstr ""
 
 #: templates/courses/cms/person_detail.html:146
 msgid "Blogposts"
-msgstr ""
+msgstr "博客文章"
 
 #: templates/courses/cms/person_list.html:21
 msgid "No persons"
-msgstr ""
+msgstr "没有人"
 
 #: templates/courses/cms/program_detail.html:42
 msgid "program cover image"
-msgstr ""
+msgstr "节目封面图片"
 
 #: templates/courses/cms/program_list.html:28
 msgid "No associated programs"
-msgstr ""
+msgstr "没有相关方案"
 
 #: templates/djangocms_video/default/video_player.html:24
 msgid "Your browser doesn't support this video format."
-msgstr ""
+msgstr "您的浏览器不支持这种视频格式。"
 
 #: templates/menu/breadcrumbs.html:5
 msgid "You are here:"
-msgstr ""
+msgstr "你在这里。"
 
 #: templates/richie/base.html:82
 msgid "Skip to main content"
-msgstr ""
+msgstr "跳到主要内容"
 
 #: templates/richie/base.html:94
 msgid "Go to homepage"
-msgstr "语言"
+msgstr "转到主页"
 
 #: templates/richie/base.html:140
 msgid "LET'S STAY IN TOUCH"
-msgstr "语言"
+msgstr "让我们保持联系"
 
 #: templates/richie/base.html:153
 msgid "All Rights Reserved."
-msgstr "语言"
+msgstr "版权所有。"
 
 #: templates/social-networks/blogpost-badges.html:3
 #, fuzzy, python-format
@@ -332,17 +332,17 @@ msgstr "阿特坎斯: %(title)s %(url)s"
 #: templates/social-networks/blogpost-badges.html:10
 #: templates/social-networks/course-badges.html:10
 msgid "Share on Facebook"
-msgstr "在脸书上分享"
+msgstr "在脸在Facebook上分享书上分享"
 
 #: templates/social-networks/blogpost-badges.html:20
 #: templates/social-networks/course-badges.html:20
 msgid "Share on Twitter"
-msgstr "分享到Twitter"
+msgstr "在Twitter上分享"
 
 #: templates/social-networks/blogpost-badges.html:30
 #: templates/social-networks/course-badges.html:30
 msgid "Share on Linkedin"
-msgstr "在领英上分享"
+msgstr "分享到Linkedin"
 
 #: templates/social-networks/blogpost-badges.html:40
 #: templates/social-networks/course-badges.html:40
@@ -351,40 +351,40 @@ msgstr "通过电子邮件分享"
 
 #: templates/social-networks/course-badges.html:3
 msgid "Follow a course online with FUN"
-msgstr "Suivre un cours en ligne avec FUN"
+msgstr "在网上追随FUN的课程"
 
 #: templates/social-networks/course-badges.html:4
 #, python-format
 msgid "I just enrolled to the course \"%(title)s\" on FUN: %(url)s"
-msgstr "Je viens de m'inscrire au cours \"%(title)s\" sur FUN: %(url)s"
+msgstr "我刚刚报名参加了这个课程 \"%(title)s\" sur FUN: %(url)s"
 
 #: templates/social-networks/footer-badges.html:8
 msgid "Facebook"
-msgstr "Facebook"
+msgstr "脸书"
 
 #: templates/social-networks/footer-badges.html:17
 msgid "Instagram"
-msgstr ""
+msgstr "淘宝网"
 
 #: templates/social-networks/footer-badges.html:26
 #: templates/social-networks/footer-badges.html:29
 msgid "Linkedin"
-msgstr "Linkedin"
+msgstr "链接"
 
 msgid "Dashboard"
-msgstr "Tableau de bord"
+msgstr "仪表板"
 
 msgid "Profile"
-msgstr "Profil"
+msgstr "形象"
 
 msgid "Account"
-msgstr "Compte"
+msgstr "帐户"
 
 msgid "Help"
-msgstr "Aide"
+msgstr "帮助"
 
 msgid "Twitter page"
-msgstr "Page Twitter"
+msgstr "推特页面"
 
 msgid "Twitter"
-msgstr "Twitter"
+msgstr "推特"
